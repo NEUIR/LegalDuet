@@ -41,5 +41,6 @@ To reproduce the **LegalDuet** pretraining process, follow these steps:
    cd LegalDuet
 
 2. **Navigate to the module directory**:
+   ```bash
    cd LegalDuet/LegalDuet/data_and_config/LegalDuet_module/in-batch/data_process/total
    python pretrain.py
