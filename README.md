@@ -61,8 +61,10 @@ Please cite the paper and star the repo if you use LegalDuet and find it helpful
 
 Feel free to contact 20223953@stu.neu.edu.cn or open an issue if you have any questions.
 
+```
 @article{LegalDuet2024,
       title={LegalDuet: Learning Effective Representations for Legal Judgment Prediction via a Dual-View Legal Reasoning}, 
       author={Buqiang Xu, Zhenghao Liu},
       year={2024},
 }
+```
