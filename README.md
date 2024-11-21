@@ -47,10 +47,11 @@ To reproduce the **LegalDuet** pretraining process, follow these steps:
 
 ## 3. Result 
 
-1. ##Embedding Visualization
+1. **Embedding Visualization
 
 We conducted a comparative study of embedding spaces to evaluate the discriminative power of LegalDuet embeddings. Using t-SNE, we visualized the embedding spaces of BERT, BERT+LegalDuet, and other ablation models, with the final visualization of SAILER+LegalDuet shown in the bottom-right.
 
 ![LegalDuet Model](https://github.com/Xubqpanda/LegalDuet/blob/main/LegalDuet/data_and_config/draw/Embedding_Visualization/embedding_visualization_ablation.png)
 
-2. ##outperforms on 
+2. **Outperforms on Cail2018
+
