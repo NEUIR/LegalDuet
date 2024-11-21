@@ -31,11 +31,15 @@ The model is pre-trained using these dual mechanisms, creating a more tailored e
 
 ![LegalDuet Model](https://github.com/yourusername/LegalDuet/blob/main/Figure/model.png)
 
-## 2. Installation
+## 2. Quick Start: Reproducing LegalDuet
 
-To set up and run the **LegalDuet** project, follow these steps:
+To reproduce the **LegalDuet** pretraining process, follow these steps:
 
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/yourusername/LegalDuet.git
    cd LegalDuet
+
+2. **Navigate to the module directory**:
+   cd LegalDuet/LegalDuet/data_and_config/LegalDuet_module/in-batch/data_process/total
+   python pretrain.py
