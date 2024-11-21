@@ -64,7 +64,7 @@ Feel free to contact 20223953@stu.neu.edu.cn or open an issue if you have any qu
 ```
 @article{LegalDuet2024,
       title={LegalDuet: Learning Effective Representations for Legal Judgment Prediction via a Dual-View Legal Reasoning}, 
-      author={Buqiang Xu, Xinze Li, Sijia Yao, Zhenghao Liu},
+      author={Buqiang Xu, Xinze Li, Sijia Yao, Zhenghao Liu, Yu Gu, Ge Yu},
       year={2024},
 }
 ```
