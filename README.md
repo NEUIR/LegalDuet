@@ -29,7 +29,7 @@ Key tasks include:
 
 The model is pre-trained using these dual mechanisms, creating a more tailored embedding space for legal tasks.
 
-![LegalDuet Model](https://github.com/Xubqpanda/LegalDuet/LegalDuet/data_and_config/draw/demo.pdf)
+![LegalDuet Model](https://github.com/Xubqpanda/LegalDuet/blob/main/LegalDuet/data_and_config/draw/demo.pdf)
 
 ## 2. Quick Start: Reproducing LegalDuet
 
