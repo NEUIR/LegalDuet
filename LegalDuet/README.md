@@ -23,7 +23,7 @@ The Cail-Big dataset can be downloaded from the following link.
 <a href="http://cail.cipsc.org.cn/task_summit.html?raceID=1&cail_tag=2018">📂 Cail-Big Dataset</a>
 
 #### 2.1.2 Indexing Legal Ground data.
-Use the following script to predict Legal Grounds for `rest_data`.
+Use the following script to predict Legal Grounds for `rest_data`:
 ```python
     cd LegalDuet/data_and_config/bert-base-chinese_module
     python BERT_Legal_Ground_index.py
@@ -80,7 +80,7 @@ Tokenize the datasets for both LGR and LCR data. The tokenizer from SAILER and b
 ```
 
 ## 4. Pretraining
-    Finally, start pretraining using the preprocessed dataset.
+Finally, start pretraining using the preprocessed dataset.
 ```python
     cd LegalDuet/data_and_config/LegalDuet_module/in-batch/data_process/total
     python pretrain.py
