@@ -3,8 +3,8 @@ Official repository for the paper "LegalDuet: Learning Effective Representations
 
 <p align="center">
     <a href="https://arxiv.org/abs/xxxxxx">📜 Paper</a> •
-    <a href="https://huggingface.co/datasets/LegalDuet-Dataset">🤗 Data</a> •
-    <a href="https://huggingface.co/models/LegalDuet">🤖 Model</a>
+    <a href="http://cail.cipsc.org.cn/task_summit.html?raceID=1&cail_tag=2018">📂 Data</a> •
+    <a href="https://huggingface.co/models/LegalDuet">🤗 Model</a>
 </p>
 
 ## 1. Introduction
@@ -35,7 +35,7 @@ The model is pre-trained using these dual mechanisms, creating a more tailored e
    conda create -n LegalDuet_env python==3.8
    conda activate LegalDuet_env
    ```
-   
+
 Check out and install requirements.
    ```
    git clone https://github.com/Xubqpanda/LegalDuet.git
@@ -45,27 +45,25 @@ Check out and install requirements.
 
 ## 3. Fine-Tuning 
 
-if you want to have a quick start of our model, just down load the model on huggingface.
+To quickly start using our model, you can download our pretrained model from Hugging Face:
 <a href="https://huggingface.co/Xubqpanda/LegalDuet">🤖 Model</a>
+Once downloaded, navigate to the `Fine-Tuning` directory to begin fine-tuning:
    ```
-   cd Finetuning
+   cd Fine-Tuning
    ```
-How to use the pretrained model, please refer to `Fine-Tuning/README.md` for more details.
+For detailed instructions on how to use the pretrained model, refer to `Fine-Tuning/README.md`
 
 ## 4. Reproducing LegalDuet
 
-To reproduce the **LegalDuet** pretraining process, follow these steps:
-
-1. **Clone the repository**:
+To reproduce the **LegalDuet** pretraining process, you will need the pretraining data.
+   The pretraining data `rest_data.json` can be downloaded from the following link:
+   <a href="http://cail.cipsc.org.cn/task_summit.html?raceID=1&cail_tag=2018">📂 Pretraining Dataset</a>
+Once downloaded, navigate to the `LegalDuet` directory to begin reproducing:
    ```
-   git clone https://github.com/Xubqpanda/LegalDuet.git
    cd LegalDuet
    ```
-2. **Navigate to the module directory**:
-   ```
-   cd LegalDuet/LegalDuet/data_and_config/LegalDuet_module/in-batch/data_process/total
-   python pretrain.py
-   ```
+For detailed instructions on how to use the pretrained model, refer to `LegalDuet/README.md`
+
 ## 5. Result 
 
 1. **Embedding Visualization**:

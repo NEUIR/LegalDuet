@@ -27,5 +27,7 @@ class ContrastiveBERTModel(nn.Module):
         projected = self.projection(cls_embedding)
         return projected
 ```
-## 3. Training your model 
-You can follow our code 'example.py' to finetuning your model.
+## 3. Training model 
+To fine-tune model, ensure your dataset format follows the structure used in **LADAN's dataset**. You can also define your dataset format based on this structure.
+
+For the full training pipeline, see `example.py`.
