@@ -1,4 +1,4 @@
-## 1. Load Pretrained `bert-base-chinese`
+## 1. Load `bert-base-chinese`
 Start by loading the `bert-base-chinese` model and tokenizer from Hugging Face's `transformers` library
 ```python
 from transformers import BertModel, BertTokenizer
