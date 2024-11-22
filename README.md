@@ -58,7 +58,7 @@ For detailed instructions on how to use the pretrained model, refer to `Fine-Tun
 
 To reproduce the **LegalDuet** pretraining process, you will need the pretraining data.
 
-The pretraining data `rest_data.json` can be downloaded from the following link<a href="http://cail.cipsc.org.cn/task_summit.html?raceID=1&cail_tag=2018">📂 Pretraining Dataset</a>
+The pretraining data `rest_data.json` can be downloaded from the following link:<a href="http://cail.cipsc.org.cn/task_summit.html?raceID=1&cail_tag=2018">📂 Pretraining Dataset</a>
 
 Once downloaded, navigate to the `LegalDuet` directory to begin reproducing:
    ```
