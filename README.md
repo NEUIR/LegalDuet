@@ -20,8 +20,6 @@ Key tasks include:
 - **Charge Prediction**: Predicting the correct charge based on the criminal facts.
 - **Imprisonment Prediction**: Estimating the sentence length based on case specifics.
 
-![Dual-View Reasoning](https://github.com/yourusername/LegalDuet/blob/main/Figure/benchmark.png)
-
 ### 1.2 Methodology
 **LegalDuet** employs two key reasoning modules:
 1. **Law Case Reasoning**: Uses past cases and decisions to inform new judgments, identifying subtle differences between similar cases to refine predictions.
@@ -31,13 +29,34 @@ The model is pre-trained using these dual mechanisms, creating a more tailored e
 
 ![LegalDuet Model](https://github.com/Xubqpanda/LegalDuet/blob/main/LegalDuet/data_and_config/draw/demo.jpg)
 
-## 2. Quick Start: Reproducing LegalDuet
+## 2. Installation
+
+   ```bash
+   conda create -n LegalDuet_env python==3.8
+   conda activate LegalDuet_env
+
+Check out and install requirements.
+   ```bash
+   git clone https://github.com/Xubqpanda/LegalDuet.git
+   cd LegalDuet
+   pip install -r requirements.txt
+
+
+## 3. Fine-Tuning 
+
+if you want to have a quick start of our model, just down load the model on huggingface.
+<a href="https://huggingface.co/Xubqpanda/LegalDuet">🤖 Model</a>
+   ```bash
+   cd Finetuning
+How to use the pretrained model, please refer to `Fine-Tuning/README.md` for more details.
+
+## 4. Reproducing LegalDuet
 
 To reproduce the **LegalDuet** pretraining process, follow these steps:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/LegalDuet.git
+   git clone https://github.com/Xubqpanda/LegalDuet.git
    cd LegalDuet
 
 2. **Navigate to the module directory**:
@@ -45,7 +64,7 @@ To reproduce the **LegalDuet** pretraining process, follow these steps:
    cd LegalDuet/LegalDuet/data_and_config/LegalDuet_module/in-batch/data_process/total
    python pretrain.py
 
-## 3. Result 
+## 5. Result 
 
 1. **Embedding Visualization**:
 
@@ -55,7 +74,7 @@ We conducted a comparative study of embedding spaces to evaluate the discriminat
 
 2. **Outperforms on Cail**:
 
-## 4. Citation
+## 6. Citation
 
 Please cite the paper and star the repo if you use LegalDuet and find it helpful.
 
