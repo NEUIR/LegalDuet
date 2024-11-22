@@ -25,8 +25,15 @@ class ContrastiveBERTModel(nn.Module):
         cls_embedding = outputs.last_hidden_state[:, 0, :]  # [CLS] token
         projected = self.projection(cls_embedding)
         return projected
-```
-## 3. Training model 
-To fine-tune model, ensure your dataset format follows the structure used in **LADAN's dataset**. You can also define your dataset format based on this structure.
 
-For the full training pipeline, see `example.py`.
+model = ContrastiveBERTModel(bert_model, projection_dim=256)
+```
+## 3. Load `LegalDuet`
+Replace the state_dict of bert-base-chinese with the pre-trained checkpoint from LegalDuet:
+```python
+checkpoint = torch.load('LegalDuet.tar')
+state_dict = checkpoint['model_state_dict']
+model.load_state_dict(state_dict)
+```
+## 4. Training model 
+To fine-tune model, ensure your dataset format follows the structure used in **LADAN's dataset**. You can also define your dataset format based on this structure.For the full training pipeline, see `example.py`.
