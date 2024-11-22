@@ -2,7 +2,6 @@
 Start by loading the `bert-base-chinese` model and tokenizer from Hugging Face's `transformers` library
 ```python
 from transformers import BertModel, BertTokenizer
-# Load the tokenizer and model
 tokenizer = BertTokenizer.from_pretrained('bert-base-chinese')
 bert_model = BertModel.from_pretrained('bert-base-chinese')
 ```
