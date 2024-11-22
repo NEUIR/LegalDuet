@@ -13,7 +13,7 @@ This repository provides resources for our paper **LegalDuet**, which proposes a
 - **Legal Ground Reasoning**: Extracting specific legal rules and triggers to improve prediction quality.
 
 ### 1.1 Benchmark
-We developed the **LegalDuet** benchmark, based on the **CAIL2018** dataset, to comprehensively evaluate legal judgment prediction models. Our approach improves upon previous methods by focusing on both legal context and specific case details.
+We used the **CAIL** benchmark, based on the **CAIL2018** dataset, to comprehensively evaluate legal judgment prediction models. 
 
 Key tasks include:
 - **Law Article Prediction**: Determining the correct legal articles applicable to a given case.
@@ -46,7 +46,8 @@ Check out and install requirements.
 ## 3. Fine-Tuning 
 
 To quickly start using our model, you can download our pretrained model from Hugging Face:
-<a href="https://huggingface.co/Xubqpanda/LegalDuet">🤖 Model</a>
+<a href="https://huggingface.co/Xubqpanda/LegalDuet">🤗 Model</a>
+
 Once downloaded, navigate to the `Fine-Tuning` directory to begin fine-tuning:
    ```
    cd Fine-Tuning
@@ -58,6 +59,7 @@ For detailed instructions on how to use the pretrained model, refer to `Fine-Tun
 To reproduce the **LegalDuet** pretraining process, you will need the pretraining data.
    The pretraining data `rest_data.json` can be downloaded from the following link:
    <a href="http://cail.cipsc.org.cn/task_summit.html?raceID=1&cail_tag=2018">📂 Pretraining Dataset</a>
+
 Once downloaded, navigate to the `LegalDuet` directory to begin reproducing:
    ```
    cd LegalDuet

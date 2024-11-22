@@ -1,6 +1,6 @@
 import torch
 from torch.utils.data import DataLoader, Dataset
-from transformers import BertTokenizer, AutoModel
+from transformers import BertTokenizer, BertModel
 import numpy as np
 import pickle as pk
 from tqdm import tqdm
@@ -65,8 +65,8 @@ test_dataset = LegalDataset(test_data)
 single_sample = [test_dataset[0]]
 single_loader = DataLoader(single_sample, batch_size=1, shuffle=False)
 
-tokenizer = BertTokenizer.from_pretrained('../SAILER_zh')
-bert_model = AutoModel.from_pretrained('../SAILER_zh')
+tokenizer = BertTokenizer.from_pretrained('../bert-base-chinese')
+bert_model = BertModel.from_pretrained('../bert-base-chinese')
 
 class LegalModel(torch.nn.Module):
     def __init__(self, bert_model):
@@ -90,7 +90,7 @@ class LegalModel(torch.nn.Module):
 
 model = LegalModel(bert_model)
 
-model.load_state_dict(torch.load("sailer_finetuned_big_model_epoch_9.pt"))
+model.load_state_dict(torch.load("bert_finetuned_big_model_epoch_5"))
 
 top_k = 4
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
