@@ -17,7 +17,7 @@ def regenerate_ids(input_filepath, output_filepath):
             except Exception as e:
                 print(f"Unexpected error on line {line_number + 1}: {str(e)}")
 
-input_filepath = 'processed_data_jsonl.jsonl'
+input_filepath = 'filtered_data.jsonl'
 output_filepath = 'Law_Case.jsonl'
 
 regenerate_ids(input_filepath, output_filepath)
