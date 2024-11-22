@@ -76,6 +76,11 @@ We conducted a comparative study of embedding spaces to evaluate the discriminat
 
 2. **Outperforms on Cail**:
 
+The Legal Judgment Prediction Performance on the CAIL-small Dataset. The best evaluation results are highlighted
+in bold and the underlined scores are the highest results of baselines:
+
+![LegalDuet Model](https://github.com/Xubqpanda/LegalDuet/blob/main/LegalDuet/data_and_config/draw/Cail_small_result.png)
+
 ## 6. Citation
 
 Please cite the paper and star the repo if you use LegalDuet and find it helpful.
