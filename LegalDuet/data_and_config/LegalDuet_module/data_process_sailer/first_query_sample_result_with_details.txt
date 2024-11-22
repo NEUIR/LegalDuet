@@ -1,0 +1,20 @@
+0 17610 419896 514022 551572 397365 554180 612930 159284 487847 417490 588698 360352 539603 389191 642334 568915
+Query ID: 0, Law: 20, Accu: 56
+Positive Sample ID: 17610
+
+Negative Samples:
+Sample ID: 419896, Law: 53, Accu: 1
+Sample ID: 514022, Law: 47, Accu: 54
+Sample ID: 551572, Law: 53, Accu: 1
+Sample ID: 397365, Law: 53, Accu: 1
+Sample ID: 554180, Law: 53, Accu: 1
+Sample ID: 612930, Law: 16, Accu: 16
+Sample ID: 159284, Law: 18, Accu: 56
+Sample ID: 487847, Law: 13, Accu: 46
+Sample ID: 417490, Law: 47, Accu: 54
+Sample ID: 588698, Law: 57, Accu: 0
+Sample ID: 360352, Law: 53, Accu: 1
+Sample ID: 539603, Law: 13, Accu: 46
+Sample ID: 389191, Law: 47, Accu: 54
+Sample ID: 642334, Law: 16, Accu: 16
+Sample ID: 568915, Law: 29, Accu: 40

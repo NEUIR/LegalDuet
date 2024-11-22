@@ -1,0 +1,42 @@
+{
+    "Query Sample ID": 0,
+    "Query Law": 20,
+    "Query Accu": 56,
+    "Top-5 similar samples": [
+        {
+            "Sample ID": 0,
+            "Law": 20,
+            "Accu": 56,
+            "Matches Query": true,
+            "Distance": 523.6087646484375
+        },
+        {
+            "Sample ID": 17610,
+            "Law": 20,
+            "Accu": 56,
+            "Matches Query": true,
+            "Distance": 511.3616638183594
+        },
+        {
+            "Sample ID": 229238,
+            "Law": 20,
+            "Accu": 56,
+            "Matches Query": true,
+            "Distance": 510.64654541015625
+        },
+        {
+            "Sample ID": 187792,
+            "Law": 20,
+            "Accu": 56,
+            "Matches Query": true,
+            "Distance": 508.8214416503906
+        },
+        {
+            "Sample ID": 44200,
+            "Law": 20,
+            "Accu": 56,
+            "Matches Query": true,
+            "Distance": 508.3725891113281
+        }
+    ]
+}
