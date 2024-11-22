@@ -17,7 +17,7 @@ We construct two datasets for contrastive learning: LGR (Legal Ground Retrieval)
 ### 2.1 LGR data
 
 #### 2.1.1 Training a downstream model.
-To build the LGR dataset, first fine-tune a BERT model on the Cail-Big dataset:Format the dataset in LADAN's format.
+To build the LGR dataset, first fine-tune a BERT model on the Cail-Big dataset.
 
 The Cail-Big dataset can be downloaded from the following link
 <a href="http://cail.cipsc.org.cn/task_summit.html?raceID=1&cail_tag=2018">📂 Cail-Big Dataset</a>
