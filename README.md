@@ -31,23 +31,25 @@ The model is pre-trained using these dual mechanisms, creating a more tailored e
 
 ## 2. Installation
 
-   ```bash
+   ```
    conda create -n LegalDuet_env python==3.8
    conda activate LegalDuet_env
-
+   ```
+   
 Check out and install requirements.
-   ```bash
+   ```
    git clone https://github.com/Xubqpanda/LegalDuet.git
    cd LegalDuet
    pip install -r requirements.txt
-
+   ```
 
 ## 3. Fine-Tuning 
 
 if you want to have a quick start of our model, just down load the model on huggingface.
 <a href="https://huggingface.co/Xubqpanda/LegalDuet">🤖 Model</a>
-   ```bash
+   ```
    cd Finetuning
+   ```
 How to use the pretrained model, please refer to `Fine-Tuning/README.md` for more details.
 
 ## 4. Reproducing LegalDuet
@@ -55,15 +57,15 @@ How to use the pretrained model, please refer to `Fine-Tuning/README.md` for mor
 To reproduce the **LegalDuet** pretraining process, follow these steps:
 
 1. **Clone the repository**:
-   ```bash
+   ```
    git clone https://github.com/Xubqpanda/LegalDuet.git
    cd LegalDuet
-
+   ```
 2. **Navigate to the module directory**:
-   ```bash
+   ```
    cd LegalDuet/LegalDuet/data_and_config/LegalDuet_module/in-batch/data_process/total
    python pretrain.py
-
+   ```
 ## 5. Result 
 
 1. **Embedding Visualization**:

@@ -5,7 +5,7 @@ from transformers import BertModel, BertTokenizer
 # Load the tokenizer and model
 tokenizer = BertTokenizer.from_pretrained('bert-base-chinese')
 bert_model = BertModel.from_pretrained('bert-base-chinese')
-
+```
 ## 2. Add a Projection Head
 We introduce a projection head on top of the [CLS] token to generate embeddings suitable for contrastive learning. You can define this as follows:
 ```python
@@ -26,6 +26,6 @@ class ContrastiveBERTModel(nn.Module):
         cls_embedding = outputs.last_hidden_state[:, 0, :]  # [CLS] token
         projected = self.projection(cls_embedding)
         return projected
-
+```
 ## 3. Training your model 
 You can follow our code 'example.py' to finetuning your model.
