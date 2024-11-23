@@ -81,6 +81,10 @@ in bold and the underlined scores are the highest results of baselines:
 
 ![LegalDuet Model](https://github.com/Xubqpanda/LegalDuet/blob/main/LegalDuet/data_and_config/draw/Cail_small_result.png)
 
+The Legal Judgment Prediction Performance on the CAIL-big Dataset. The best evaluation results are highlighted in bold, and the underlined scores indicate the second-best results across all models.
+
+![LegalDuet Model](https://github.com/Xubqpanda/LegalDuet/blob/main/LegalDuet/data_and_config/draw/Cail_small_result.png)
+
 ## 6. Citation
 
 Please cite the paper and star the repo if you use LegalDuet and find it helpful.
