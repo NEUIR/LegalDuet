@@ -74,7 +74,7 @@ We conducted a comparative study of embedding spaces to evaluate the discriminat
 
 ![LegalDuet Model](https://github.com/Xubqpanda/LegalDuet/blob/main/LegalDuet/data_and_config/draw/Embedding_Visualization/embedding_visualization_bert_ablation.png)
 
-### 5.2 **Outperforms on Cail**:
+### 5.2 **Outperforms on CAIL**:
 
 The Legal Judgment Prediction Performance on the CAIL-small Dataset. The best evaluation results are highlighted
 in bold and the underlined scores are the highest results of baselines:
