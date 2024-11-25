@@ -1,6 +1,6 @@
 import torch
 from torch.utils.data import DataLoader, Dataset
-from transformers import BertTokenizer, BertModel
+from transformers import BertTokenizer, AutoModel
 import numpy as np
 import pickle as pk
 from tqdm import tqdm
@@ -66,8 +66,8 @@ test_dataset = LegalDataset(test_data)
 test_loader = DataLoader(test_dataset, batch_size=1, shuffle=False)
 
 # 加载 BERT 模型和分词器
-tokenizer = BertTokenizer.from_pretrained('../bert-base-chinese')
-bert_model = BertModel.from_pretrained('../bert-base-chinese')
+tokenizer = BertTokenizer.from_pretrained('../SAILER_zh')
+bert_model = AutoModel.from_pretrained('../SAILER_zh')
 
 # 模型定义
 class LegalModel(torch.nn.Module):
@@ -92,7 +92,7 @@ class LegalModel(torch.nn.Module):
 
 model = LegalModel(bert_model)
 
-model.load_state_dict(torch.load("bert_finetuned_big_model_epoch_5.pt"))
+model.load_state_dict(torch.load("sailer_finetuned_big_model_epoch_9.pt"))
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model.to(device)

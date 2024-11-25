@@ -17,7 +17,7 @@ We construct two datasets for contrastive learning: LGR (Legal Ground Retrieval)
 ### 2.1 LGR data
 
 #### 2.1.1 Training a downstream model.
-To build the LGR dataset, first fine-tune a BERT model on the Cail-Big dataset.
+To build the LGR dataset, first fine-tune a SAILER model on the Cail-Big dataset.
 
 The Cail-Big dataset can be downloaded from the following link
 <a href="http://cail.cipsc.org.cn/task_summit.html?raceID=1&cail_tag=2018">📂 Cail-Big Dataset</a>
@@ -25,8 +25,8 @@ The Cail-Big dataset can be downloaded from the following link
 #### 2.1.2 Indexing Legal Ground data.
 Use the following script to predict Legal Grounds for `rest_data`:
 ```python
-    cd LegalDuet/data_and_config/bert-base-chinese_module
-    python BERT_Legal_Ground_index.py
+    cd LegalDuet/data_and_config/SAILER_zh_module
+    python SAILER_Legal_Ground_index.py
 ```
 
 ### 2.2 LCR data
