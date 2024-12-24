@@ -60,8 +60,8 @@ Tokenize the datasets for both LGR and LCR data. The tokenizer from SAILER and b
 ### 3.1 Tokenize LCR Data
 ```python
     cd LegalDuet/data_and_config/LegalDuet_module/data_process_sailer
-    python Law_Case_tokenizer.py
-    cd LegalDuet/LegalDuet/data_and_config/LegalDuet_module/in-batch/data_process/Legal_Ground
+    python tokenizer.py
+    cd LegalDuet/data_and_config/LegalDuet_module/in-batch/data_process/Law_Case
     python token_fetch.py
 ```
 ### 3.2 Tokenize LGR Data
@@ -69,7 +69,7 @@ Tokenize the datasets for both LGR and LCR data. The tokenizer from SAILER and b
     cd LegalDuet/data_and_config/LegalDuet_module/data_process_sailer
     python Legal_Ground.py
     python Legal_Ground_format.py
-    cd LegalDuet/data_and_config/LegalDuet_module/in-batch/data_process/Law_Case
+    cd LegalDuet/data_and_config/LegalDuet_module/in-batch/data_process/Legal_Ground
     python token_fetch.py
 ```
 ### 3.3 Merge and Prepare for Pretraining
