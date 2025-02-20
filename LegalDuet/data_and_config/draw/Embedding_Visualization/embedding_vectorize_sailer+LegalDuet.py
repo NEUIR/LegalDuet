@@ -5,7 +5,7 @@ from transformers import BertTokenizer, AutoModel
 import os
 import torch.nn as nn
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "2"
+os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 class ContrastiveBERTModel(nn.Module):
@@ -31,7 +31,9 @@ class LegalModel(nn.Module):
 tokenizer = BertTokenizer.from_pretrained('SAILER_zh')
 
 weight_paths = {
-    'lcr_lgr': 'checkpoint_sailer_epoch_2_batch_13500.pth.tar'
+    # 'lcr': 'checkpoint_sailer_lcr_epoch_1_batch_9000.pth.tar',
+    # 'lgr': 'checkpoint_sailer_lgr_epoch_1_batch_8500.pth.tar'
+    'lcr_lgr': '/data1/xubuqiang/total/checkpoint_sailer_epoch_2_batch_13500.pth.tar'
 }
 
 
@@ -43,9 +45,11 @@ def generate_embedding(text, model):
     cls_embedding = outputs.squeeze().cpu().numpy() 
     return cls_embedding
 
-input_file_path = 'filtered_Law_Case.jsonl'
+input_file_path = 'filtered_Law_Case_test_all.jsonl'
 output_file_paths = {
-    'lcr_lgr': 'embedding_sailer_lcr_lgr.jsonl'
+    # 'lcr': 'embedding_sailer_lcr.jsonl',
+    # 'lgr': 'embedding_sailer_lgr.jsonl'
+    'lcr_lgr': 'embedding_sailer_lcr_lgr_test_all.jsonl'
 }
 
 for model_name, weight_path in weight_paths.items():

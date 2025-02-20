@@ -81,8 +81,10 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 embedding_files = {
-    'SAILER': 'embedding_sailer_baseline.jsonl',
-    'SAILER+LegalDuet': 'embedding_sailer_lcr_lgr.jsonl'
+    'SAILER': 'embedding_sailer_baseline_test_all.jsonl',
+    # 'SAILER+lcr': 'embedding_sailer_lcr.jsonl',
+    # 'SAILER+lgr': 'embedding_sailer_lgr.jsonl'
+    'SAILER+LegalDuet': 'embedding_sailer_lcr_lgr_test_all.jsonl'
 }
 
 def load_embeddings(file_path):
@@ -109,7 +111,7 @@ sns.set(style="white")  # 去掉网格线
 for model_name, file_path in embedding_files.items():
     embeddings, labels = load_embeddings(file_path)
     labels = np.vectorize(charge_mapping.get)(labels)
-    tsne = TSNE(n_components=2, perplexity=40, learning_rate=200, random_state=42)
+    tsne = TSNE(n_components=2, perplexity=5, learning_rate=200, random_state=42)
     embeddings_2d = tsne.fit_transform(embeddings)
     plt.figure(figsize=(8, 6))
     
@@ -126,9 +128,10 @@ for model_name, file_path in embedding_files.items():
     # plt.title(f"{model_name} Embeddings Visualization")
     plt.xticks([]) 
     plt.yticks([])  
+    plt.tight_layout(pad=0.1)  # 适当减少空白
     # plt.legend(title="Charges", loc="upper right", fontsize=8, markerscale=0.7)  # 添加图例标题
 
-    individual_output_path = f"embedding_visualization_{model_name}.pdf"
+    individual_output_path = f"embedding_visualization_{model_name}_test_all.pdf"
     plt.savefig(individual_output_path, dpi=300)
     plt.close()  
     print(f"{model_name} 的可视化结果已保存为 {individual_output_path}")

@@ -54,9 +54,9 @@ def generate_embedding(text, model):
     return cls_embedding
 
 
-input_file_path = 'filtered_Law_Case.jsonl'
+input_file_path = 'filtered_Law_Case_test_all.jsonl'
 output_file_paths = {
-    'bert_baseline': 'embedding_bert_baseline.jsonl',
+    'bert_baseline': 'embedding_bert_baseline_test_all.jsonl',
     #'lcr': 'embedding_lcr.jsonl',
     #'lgr': 'embedding_lgr.jsonl',
     #'lcr_lgr': 'embedding_lcr_lgr.jsonl'

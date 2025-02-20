@@ -4,9 +4,10 @@ import matplotlib.pyplot as plt
 from tqdm import tqdm
 
 embedding_file_paths = [
-    ('BERT', 'embedding_bert_baseline.jsonl'),
-    ('BERT-XS', 'embedding_bert_xs.jsonl'),
-    ('LegalDuet', 'embedding_bert_lcr_lgr.jsonl')
+    ('BERT', 'embedding_bert_baseline_test_all.jsonl'),
+    ('BERT-XS', 'embedding_bert_xs_test_all.jsonl'),
+    ('LegalDuet', 'embedding_sailer_lcr_lgr_test_all.jsonl'),
+    ('SAILER','embedding_sailer_baseline_test_all.jsonl')
 ]
 
 dbi_values = []  
@@ -74,5 +75,5 @@ for bar in bars:
              ha='center', va='bottom', color='black', fontsize=15)  # 字体大小调整为 12，并上移
 
 plt.tight_layout()  
-plt.savefig("DBI_comparison.pdf") 
+plt.savefig("DBI_comparison.png") 
 plt.show()

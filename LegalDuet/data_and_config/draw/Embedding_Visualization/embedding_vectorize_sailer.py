@@ -54,9 +54,9 @@ def generate_embedding(text, model):
     return cls_embedding
 
 
-input_file_path = 'filtered_Law_Case.jsonl'
+input_file_path = 'filtered_Law_Case_test_all.jsonl'
 output_file_paths = {
-    'sailer_baseline': 'embedding_sailer_baseline.jsonl',
+    'sailer_baseline': 'embedding_sailer_baseline_test_all.jsonl',
     #'lcr': 'embedding_lcr.jsonl',
     #'lgr': 'embedding_lgr.jsonl',
     #'lcr_lgr': 'embedding_lcr_lgr.jsonl'
