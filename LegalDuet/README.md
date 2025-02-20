@@ -13,11 +13,11 @@ Follow these steps to preprocess the raw dataset into the required format for Le
 ```
 
 ## 2. Contrastive Learning Dataset Construction
-We construct two datasets for contrastive learning: LGR (Legal Ground Retrieval) and LCR (Legal Case Retrieval).
-### 2.1 LGR data
+We construct two datasets for contrastive learning: LDM (Legal Decision Matching) and LCC (Legal Case Clustering).
+### 2.1 LDM data
 
 #### 2.1.1 Training a downstream model.
-To build the LGR dataset, first fine-tune a SAILER model on the Cail-Big dataset.
+To build the LDM dataset, first fine-tune a SAILER model on the Cail-Big dataset.
 
 The Cail-Big dataset can be downloaded from the following link
 <a href="http://cail.cipsc.org.cn/task_summit.html?raceID=1&cail_tag=2018">📂 Cail-Big Dataset</a>
@@ -28,8 +28,11 @@ Use the following script to predict Legal Grounds for `rest_data`:
     cd LegalDuet/data_and_config/SAILER_zh_module
     python SAILER_Legal_Ground_index.py
 ```
+We also provide our prediction results on the following link
+<a href="https://huggingface.co/Xubqpanda/LegalDuet/blob/main/predicted_samples.jsonl">📂
+Prediction-Results</a>
 
-### 2.2 LCR data
+### 2.2 LCC data
 
 #### 2.2.1 Vectorize the Dataset
 ```python
@@ -55,16 +58,16 @@ Use the following script to predict Legal Grounds for `rest_data`:
 ```
 
 ## 3. Tokenization
-Tokenize the datasets for both LGR and LCR data. The tokenizer from SAILER and bert-base-chinese can be used interchangeably.
+Tokenize the datasets for both LDM and LCC data. The tokenizer from SAILER and bert-base-chinese can be used interchangeably.
 
-### 3.1 Tokenize LCR Data
+### 3.1 Tokenize LCC Data
 ```python
     cd LegalDuet/data_and_config/LegalDuet_module/data_process_sailer
     python tokenizer.py
     cd LegalDuet/data_and_config/LegalDuet_module/in-batch/data_process/Law_Case
     python token_fetch.py
 ```
-### 3.2 Tokenize LGR Data
+### 3.2 Tokenize LDM Data
 ```python
     cd LegalDuet/data_and_config/LegalDuet_module/data_process_sailer
     python Legal_Ground.py

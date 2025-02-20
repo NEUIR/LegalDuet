@@ -37,11 +37,13 @@ class LegalDataset(Dataset):
             'id': idx  # 保存样本ID
         }
 
+# 加载标签映射
 def load_labels(file_path):
     with open(file_path, 'r', encoding='utf-8') as f:
         labels = [line.strip() for line in f]
     return labels
 
+# 加载标签
 original_law_labels = load_labels('original_law_labels.txt')  # 118个法条
 new_law_labels = load_labels('new_law_labels.txt')            # 59个法条
 
@@ -60,8 +62,9 @@ law_mapping = {original_law_to_index[label]: new_law_to_index[label] for label i
 accu_mapping = {original_accu_to_index[label]: new_accu_to_index[label] for label in original_accu_labels if label in new_accu_to_index}
 
 # 加载测试数据
-test_data = pk.load(open('../data_processed/Law_Case_processed_bert.pkl', 'rb'))
+test_data = pk.load(open('../data_processed/processed_processed_sailer_rest.pkl', 'rb'))
 
+# 创建数据集和数据加载器
 test_dataset = LegalDataset(test_data)
 test_loader = DataLoader(test_dataset, batch_size=1, shuffle=False)
 
@@ -92,54 +95,78 @@ class LegalModel(torch.nn.Module):
 
 model = LegalModel(bert_model)
 
-model.load_state_dict(torch.load("sailer_finetuned_big_model_epoch_9.pt"))
-
+# 加载训练好的模型参数
+model.load_state_dict(torch.load("sailer_finetuned_big_law_model_epoch_9.pt"))
+# 模型评估
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model.to(device)
 model.eval()
 
-output_file_path = 'predicted_samples.jsonl'
+results_law = {}
 
 with torch.no_grad():
-    with open(output_file_path, 'w', encoding='utf-8') as outfile:
-        for batch in tqdm(test_loader, desc="Processing samples"):
-            input_ids = batch['input_ids'].to(device)
-            attention_mask = batch['attention_mask'].to(device)
-            law_labels = batch['law'].to(device)
-            accu_labels = batch['accu'].to(device)
-            sample_id = batch['id'].item()  # 获取样本ID
+    for batch in tqdm(test_loader, desc="Predicting Law"):
+        input_ids = batch['input_ids'].to(device)
+        attention_mask = batch['attention_mask'].to(device)
+        sample_id = batch['id'].item()
 
-            law_logits, accu_logits, time_logits = model(input_ids, attention_mask)
+        # 前向
+        law_logits, accu_logits, time_logits = model(input_ids, attention_mask)
 
-            valid_law_preds, valid_accu_preds = [], []
-            k = 4
+        # 找到满足条件的 law 预测
+        valid_law_preds = []
+        k = 4
+        while (len(valid_law_preds) < 4) and (k <= 20):
+            law_topk_preds = torch.topk(law_logits, k, dim=1)[1].cpu().numpy().flatten()
+            for idx in law_topk_preds:
+                if idx in law_mapping:
+                    mapped_idx = law_mapping[idx]
+                    if mapped_idx not in valid_law_preds and len(valid_law_preds) < 4:
+                        valid_law_preds.append(mapped_idx)
+            k += 1
+        
+        # 保存结果
+        results_law[sample_id] = valid_law_preds
 
-            while (len(valid_law_preds) < 4 or len(valid_accu_preds) < 4) and k <= 20:  # 找到4个样本后停止
-                # 获取Top-K结果
-                law_topk_preds = torch.topk(law_logits, k, dim=1)[1].cpu().numpy().flatten()
-                accu_topk_preds = torch.topk(accu_logits, k, dim=1)[1].cpu().numpy().flatten()
+test_loader = DataLoader(test_dataset, batch_size=1, shuffle=False)
 
-                for idx in law_topk_preds:
-                    if idx in law_mapping:
-                        mapped_idx = law_mapping[idx]
-                        if mapped_idx not in valid_law_preds and len(valid_law_preds) < 4:
-                            valid_law_preds.append(mapped_idx)
+model.load_state_dict(torch.load("sailer_finetuned_big_accu_model_epoch_9.pt"))
+model.eval()
 
-                for idx in accu_topk_preds:
-                    if idx in accu_mapping:
-                        mapped_idx = accu_mapping[idx]
-                        if mapped_idx not in valid_accu_preds and len(valid_accu_preds) < 4:
-                            valid_accu_preds.append(mapped_idx)
+results_accu = {}
 
-                k += 1  # 增加k，继续获取更多的预测结果
+with torch.no_grad():
+    for batch in tqdm(test_loader, desc="Predicting Accu"):
+        input_ids = batch['input_ids'].to(device)
+        attention_mask = batch['attention_mask'].to(device)
+        sample_id = batch['id'].item()
 
-            # 构建结果
-            result = {
-                'sample_id': sample_id,
-                'law_samples': valid_law_preds,
-                'accu_samples': valid_accu_preds
-            }
+        law_logits, accu_logits, time_logits = model(input_ids, attention_mask)
 
-            outfile.write(json.dumps(result, ensure_ascii=False) + '\n')
+        valid_accu_preds = []
+        k = 4
+        while (len(valid_accu_preds) < 4) and (k <= 20):
+            accu_topk_preds = torch.topk(accu_logits, k, dim=1)[1].cpu().numpy().flatten()
+            for idx in accu_topk_preds:
+                if idx in accu_mapping:
+                    mapped_idx = accu_mapping[idx]
+                    if mapped_idx not in valid_accu_preds and len(valid_accu_preds) < 4:
+                        valid_accu_preds.append(mapped_idx)
+            k += 1
+
+        results_accu[sample_id] = valid_accu_preds
+
+output_file_path = 'predicted_samples.jsonl'
+with open(output_file_path, 'w', encoding='utf-8') as outfile:
+   
+    for sample_id in sorted(results_law.keys()):
+        law_preds = results_law[sample_id]
+        accu_preds = results_accu[sample_id]
+        result = {
+            'sample_id': sample_id,
+            'law_samples': law_preds,
+            'accu_samples': accu_preds
+        }
+        outfile.write(json.dumps(result, ensure_ascii=False) + '\n')
 
 print(f"所有样本的预测结果已保存到 {output_file_path}")
