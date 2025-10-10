@@ -1,8 +1,8 @@
 # ⚖️ LegalDuet  
-Official repository for the paper "LegalDuet: Learning Effective Representations for Legal Judgment Prediction via a Dual-View Contrastive Learning".
+Official repository for our ADMA'25 paper "LegalDuet: Learning Effective Representations for Legal Judgment Prediction via a Dual-View Contrastive Learning".
 
 <p align="center">
-    <a href="https://arxiv.org/abs/xxxxxx">📜 Paper</a> •
+    <a href="https://arxiv.org/abs/2401.15371">📜 Paper</a> •
     <a href="http://cail.cipsc.org.cn/task_summit.html?raceID=1&cail_tag=2018">📂 Data</a> •
     <a href="https://huggingface.co/Xubqpanda/LegalDuet">🤗 Model</a>
 </p>
@@ -70,7 +70,7 @@ For detailed instructions on how to use the pretrained model, refer to `LegalDue
 
 ### 5.1 **Embedding Visualization**:
 
-We conducted a comparative study of embedding spaces to evaluate the discriminative power of LegalDuet embeddings. Using t-SNE, we visualized the embedding spaces of BERT, BERT+LegalDuet, and other ablation models, with the final visualization of SAILER+LegalDuet shown in the bottom-right.
+We conducted a comparative study of embedding spaces to evaluate the discriminative power of LegalDuet embeddings. Using t-SNE, we visualized the embedding spaces of BERT, BERT+LegalDuet, and calculated the DBI reduction values to further investigate its capability in fine-grained differentiation.
 
 ![LegalDuet Model](https://github.com/NEUIR/LegalDuet/blob/main/LegalDuet/data_and_config/draw/Embedding_Visualization/embedding_visualization_bert_ablation.png)
 
@@ -87,5 +87,17 @@ The Legal Judgment Prediction Performance on the CAIL-big Dataset. The best eval
 ## 6. Citation
 
 Please cite the paper and star the repo if you use LegalDuet and find it helpful.
+
+```
+@article{xu2024legalduet,
+  title={LegalDuet: Learning Fine-grained Representations for Legal Judgment Prediction via a Dual-View Contrastive Learning},
+  author={Xu, Buqiang and Dai, Xin and Liu, Zhenghao and Xie, Huiyuan and Yi, Xiaoyuan and Wang, Shuo and Yan, Yukun and Yang, Liner and Gu, Yu and Yu, Ge},
+  journal={arXiv e-prints},
+  pages={arXiv--2401},
+  year={2024}
+}
+```
+
+## 7. Contact
 
 Feel free to contact 20223953@stu.neu.edu.cn or open an issue if you have any questions.
