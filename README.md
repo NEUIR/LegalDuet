@@ -89,12 +89,13 @@ The Legal Judgment Prediction Performance on the CAIL-big Dataset. The best eval
 Please cite the paper and star the repo if you use LegalDuet and find it helpful.
 
 ```
-@article{xu2024legalduet,
-  title={LegalDuet: Learning Fine-grained Representations for Legal Judgment Prediction via a Dual-View Contrastive Learning},
+@inproceedings{xu2025legalduet,
+  title={LegalDuet: Learning Fine-Grained Representations for Legal Judgment Prediction via a Dual-View Contrastive Learning},
   author={Xu, Buqiang and Dai, Xin and Liu, Zhenghao and Xie, Huiyuan and Yi, Xiaoyuan and Wang, Shuo and Yan, Yukun and Yang, Liner and Gu, Yu and Yu, Ge},
-  journal={arXiv e-prints},
-  pages={arXiv--2401},
-  year={2024}
+  booktitle={International Conference on Advanced Data Mining and Applications},
+  pages={337--352},
+  year={2025},
+  organization={Springer}
 }
 ```
 
