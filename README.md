@@ -1,7 +1,7 @@
 # ⚖️ LegalDuet  
 ### 🏆 Best Paper Award at ADMA 2025
 
-Official repository for our ADMA'25 paper "LegalDuet: Learning Effective Representations for Legal Judgment Prediction via a Dual-View Contrastive Learning".
+Official repository for our ADMA'25 paper "LegalDuet: Learning Fine-grained Representations for Legal Judgment Prediction via a Dual-View Contrastive Learning".
 
 <p align="center">
     <a href="https://arxiv.org/abs/2401.15371">📜 Paper</a> •
